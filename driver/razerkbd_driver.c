@@ -542,6 +542,7 @@ int razer_set_starlight_mode(struct usb_device *usb_dev)
  *   Razer BlackWidow Chroma
  *   Razer BlackWidow Ultimate 2016
  *   Razer Blade Stealth
+ *   Razer Deathstalker Chroma
  */
 int razer_set_wave_mode(struct usb_device *usb_dev, unsigned char direction)
 {
@@ -1561,6 +1562,10 @@ static ssize_t razer_attr_read_device_type(struct device *dev, struct device_att
             device_type = "Razer BlackWidow X Chroma\n";
             break;
 
+        case USB_DEVICE_ID_RAZER_DEATHSTALKER_CHROMA:
+            device_type = "Razer Deathstalker Chroma";
+            break;
+
         default:
             device_type = "Unknown Device\n";
     }
@@ -2040,6 +2045,7 @@ static const struct hid_device_id razer_devices[] = {
     { HID_USB_DEVICE(USB_VENDOR_ID_RAZER,USB_DEVICE_ID_RAZER_BLACKWIDOW_CHROMA) },
     { HID_USB_DEVICE(USB_VENDOR_ID_RAZER,USB_DEVICE_ID_RAZER_BLACKWIDOW_CHROMA_X) },
     { HID_USB_DEVICE(USB_VENDOR_ID_RAZER,USB_DEVICE_ID_RAZER_BLACKWIDOW_CHROMA_TE) },
+    { HID_USB_DEVICE(USB_VENDOR_ID_RAZER,USB_DEVICE_ID_RAZER_DEATHSTALKER_CHROMA) },
     { }
 };
 
